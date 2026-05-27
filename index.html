@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryann | Administrateur Réseaux et Systèmes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-green: #238636;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 15px auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-linkedin { background-color: #0077B5; color: white; }
+        .btn-email { background-color: #D14836; color: white; }
+        .btn:hover { opacity: 0.9; }
+
+        h2 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--accent);
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media(min-width: 768px) {
+            .grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .skill-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .project-title a:hover { text-decoration: underline; }
+
+        .tag {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .cert-item a {
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cert-item a:hover { color: var(--accent); }
+
+        .badge-status {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background-color: #6e7681;
+        }
+        .badge-status.encours { background-color: #9e6a00; color: #fff; }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>
+            <img src="https://media.giphy.com/media/hvRJCLFzcasr6/giphy.gif" width="35px" alt="Wave">
+            Salut, moi c'est Ryann !
+        </h1>
+        <p class="subtitle">
+            <strong>Administrateur Réseaux et Systèmes</strong> diplômé en Informatique et Télécommunications. 
+            Passionné par la conception, la sécurisation et l'automatisation des infrastructures réseaux.
+        </p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/ryannad/" target="_blank" class="btn btn-linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:ryannadrianno@gmail.com" class="btn btn-email">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION COMPETENCES -->
+    <h2><i class="fas fa-tools"></i> Compétences Techniques</h2>
+    <div class="grid">
+        <div class="card">
+            <h3><i class="fas fa-network-wired"></i> Ingénierie Réseau & Sécurité</h3>
+            <ul class="skill-list">
+                <li><strong>Routage & Commutation :</strong> Cisco IOS, Inter-VLAN, STP, EtherChannel, Trunking, VLSM.</li>
+                <li><strong>Sécurité & VPN :</strong> VPN IPsec, Tunnels GRE, Firewalls (pfSense), SSH, VLAN de management.</li>
+                <li><strong>Réseau Physique :</strong> Câblage RJ45 (mâle/femelle).</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-server"></i> Admin Systèmes & Virtualisation</h3>
+            <ul class="skill-list">
+                <li><strong>Systèmes :</strong> Linux (Ubuntu, Debian), Windows Server (AD, OU, GPO), Clonezilla.</li>
+                <li><strong>Outils & Simulation :</strong> GNS3, Cisco Packet Tracer, VMware, VirtualBox, GitHub.</li>
+                <li><strong>Programmation :</strong> Python</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION LANGUES -->
+    <h2><i class="fas fa-language"></i> Langues & Soft Skills</h2>
+    <p>
+        🇫🇷 <strong>Français :</strong> Courant &nbsp;|&nbsp; 
+        🇺🇸 <strong>Anglais :</strong> Courant (Niveau C2 certifié - ITTI) &nbsp;|&nbsp; 
+        🇲🇬 <strong>Malagasy :</strong> Natif
+    </p>
+
+    <!-- SECTION PROJETS -->
+    <h2><i class="fas fa-project-diagram"></i> Projets Réseaux & Systèmes</h2>
+    
+    <div class="project-card">
+        <div class="project-title">
+            <a href="https://github.com/ryann-netadmin/cisco-collapsed-core-vism-network" target="_blank">Architecture PME - Collapsed Core <i class="fas fa-external-link-alt" style="font-size:0.8rem"></i></a>
+        </div>
+        <p>Conception et sécurisation complète d'une topologie réseau d'entreprise sur Cisco Packet Tracer. Implémentation du routage inter-VLAN, serveurs DHCP centralisés et isolation stricte (VLAN 99/100).</p>
+        <div>
+            <span class="tag">Cisco IOS</span><span class="tag">VLSM</span><span class="tag">Multi-VLANs</span><span class="tag">Security Hardening</span>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-title">
+            <a href="https://lnkd.in/ezh3gYyS" target="_blank">VPN Intranet Site-à-Site & Services <i class="fas fa-external-link-alt" style="font-size:0.8rem"></i></a>
+        </div>
+        <p>Mise en place d'un tunnel sécurisé interconnectant des infrastructures virtuelles. Déploiement d'un VPN IPsec sur GNS3 et intégration de serveurs applicatifs (Asterisk, Samba, VLC) sur Ubuntu.</p>
+        <div>
+            <span class="tag">GNS3</span><span class="tag">Routeurs Cisco</span><span class="tag">IPsec</span><span class="tag">Ubuntu</span><span class="tag">Asterisk</span>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-title">
+            <a href="https://github.com/ryann-netadmin/Projet_Reseau_Hybride" target="_blank">Interconnexion Réseau Hybride <i class="fas fa-external-link-alt" style="font-size:0.8rem"></i></a>
+        </div>
+        <p>Réalisation d'une topologie réseau interconnectant deux sites géographiques distincts. Configuration d'un routage hybride combinant Router-on-a-stick et Switch L3, avec services DNS, HTTP et DHCP.</p>
+        <div>
+            <span class="tag">Cisco Packet Tracer</span><span class="tag">Switch L3</span><span class="tag">Services Web/DNS</span>
+        </div>
+    </div>
+
+    <!-- SECTION CERTIFICATIONS -->
+    <h2><i class="fas fa-certificate"></i> Certifications</h2>
+    <ul class="cert-list">
+        <li class="cert-item">
+            <a href="https://github.com/ryann-netadmin/ryann-netadmin.github.io/raw/main/Certifications/CCNA_Introduction_to_Networks_Ryann.pdf" target="_blank"><i class="fas fa-file-pdf text-danger"></i> Cisco CCNA : Introduction to Networks (2026)</a>
+        </li>
+        <li class="cert-item">
+            <span><i class="fas fa-hourglass-half text-warning"></i> Cisco CCNA : Switching, Routing, and Wireless Essentials</span>
+            <span class="badge-status encours">En cours</span>
+        </li>
+        <li class="cert-item">
+            <a href="https://github.com/ryann-netadmin/ryann-netadmin.github.io/raw/main/Certifications/itti_c2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> ITTI : English Level C2 (2026)</a>
+        </li>
+        <li class="cert-item">
+            <a href="https://github.com/ryann-netadmin/ryann-netadmin.github.io/raw/main/Certifications/ODC_certificate_ryann.jpeg" target="_blank"><i class="fas fa-image"></i> ODC : Configuration, dépannage & sécurité réseau (2025)</a>
+        </li>
+        <li class="cert-item">
+            <a href="https://github.com/ryann-netadmin/ryann-netadmin.github.io/raw/main/Certifications/Certification_win-serv_ryann.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Udemy : Maîtriser Windows Serveur (2025)</a>
+        </li>
+        <li class="cert-item">
+            <a href="https://github.com/ryann-netadmin/ryann-netadmin.github.io/raw/main/Certifications/Networking_Basics_certificate_ryann.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Cisco : Networking Basics (2025)</a>
+        </li>
+    </ul>
+
+    <footer>
+        <p>&copy; 2026 Ryann. Propulsé par GitHub Pages.</p>
+    </footer>
+</div>
+
+</body>
+</html>
