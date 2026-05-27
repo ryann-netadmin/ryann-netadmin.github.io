@@ -1,0 +1,17 @@
+h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap; /* Permet un bon affichage sur mobile */
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Rend la photo parfaitement ronde */
+            border: 3px solid var(--accent); /* Ajoute une jolie bordure bleue */
+            object-fit: cover;
+        }
