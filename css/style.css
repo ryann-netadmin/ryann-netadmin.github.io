@@ -19,15 +19,25 @@ body {
 
 .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
-/* --- HEADER --- */
+/* --- HEADER & PROFIL --- */
 header { text-align: center; margin-bottom: 50px; }
 h1 { font-size: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+.profile-link { display: flex; text-decoration: none; }
 
 .profile-pic-container {
     width: 120px; height: 120px; border-radius: 50%;
     border: 3px solid var(--accent); padding: 3px;
+    cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
 }
-.profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+.profile-pic-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+}
+
+.profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
 .anim-text {
     background: linear-gradient(90deg, #fff, var(--accent), #fff);
@@ -36,7 +46,7 @@ h1 { font-size: 2.5rem; display: flex; align-items: center; justify-content: cen
 }
 @keyframes shine { to { background-position: 200% center; } }
 
-/* --- NOUVEAU DESIGN PROJETS --- */
+/* --- DESIGN PROJETS --- */
 .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -61,7 +71,7 @@ h1 { font-size: 2.5rem; display: flex; align-items: center; justify-content: cen
     border: 1px solid var(--border-color);
 }
 
-/* --- NOUVEAU DESIGN CERTIFICATS --- */
+/* --- DESIGN CERTIFICATS --- */
 .cert-list { list-style: none; padding: 0; }
 .cert-item {
     background: var(--card-bg);
@@ -81,5 +91,5 @@ h1 { font-size: 2.5rem; display: flex; align-items: center; justify-content: cen
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; }
 h2 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 50px; display: inline-block; }
-.btn { padding: 10px 20px; border-radius: 6px; font-weight: bold; text-decoration: none; }
+.btn { padding: 10px 20px; border-radius: 6px; font-weight: bold; text-decoration: none; display: inline-block; }
 .btn-cv { background: var(--accent-green); color: white; }
