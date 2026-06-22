@@ -17,7 +17,21 @@ body {
     padding: 0;
 }
 
-/* --- ANIMATION RYANN (CODE SÉCURISÉ) --- */
+.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+/* --- HEADER & ANIMATION --- */
+header { text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 30px; margin-bottom: 40px; }
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
 .anim-text {
     background: linear-gradient(90deg, #c9d1d9, #58a6ff, #c9d1d9);
     background-size: 200% auto;
@@ -30,20 +44,6 @@ body {
 
 @keyframes shine {
     to { background-position: 200% center; }
-}
-/* ------------------------------------- */
-
-.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-header { text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 30px; margin-bottom: 40px; }
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
 }
 
 .profile-pic-container {
@@ -72,6 +72,8 @@ h1 {
 .profile-pic-container:hover .profile-pic { transform: scale(0.95); }
 
 .subtitle { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 15px auto; }
+
+/* --- BOUTONS --- */
 .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: opacity 0.2s, transform 0.1s; }
 .btn-cv { background-color: var(--accent-green); color: white; }
@@ -79,10 +81,47 @@ h1 {
 .btn-email { background-color: #D14836; color: white; }
 .btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
-h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 8px; color: #ffffff; margin-top: 40px; }
-h3 { color: var(--accent); margin-top: 20px; }
+/* --- SECTIONS GÉNÉRALES --- */
+h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 8px; color: #ffffff; margin-top: 50px; font-size: 1.5rem; }
+h3 { color: var(--accent); margin-top: 20px; font-size: 1.1rem; }
+
 .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 @media(min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
-.card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; }
+.card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
 
+/* --- PROJETS --- */
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.project-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.project-title a { color: var(--accent); font-size: 1.2rem; font-weight: 600; text-decoration: none; }
+.tags-container { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background: rgba(88, 166, 255, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+
+/* --- CERTIFICATIONS --- */
+.cert-list { list-style: none; padding: 0; }
+.cert-item {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.cert-item:hover { background: #1c2128; }
+.cert-item a { color: var(--text-main); text-decoration: none; flex-grow: 1; display: flex; align-items: center; gap: 15px; }
+.view-hint { font-size: 0.75rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px; opacity: 0.7; }
+
+/* --- DIVERS --- */
+.skill-list { list-style-type: none; padding: 0; }
+.skill-list li { margin-bottom: 10px; padding-left: 15px; position: relative; }
+.skill-list li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+.languages-block { display: flex; flex-wrap: wrap; gap: 25px; color: var(--text-muted); }
 footer { text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); padding-top: 20px; }
