@@ -40,46 +40,32 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* Remplace ton ancien .profile-pic par ceci */
 .profile-pic-container {
-    display: inline-block;
     position: relative;
+    width: 90px;
+    height: 90px;
+    padding: 4px; /* Espace pour la bordure */
+    background: linear-gradient(45deg, var(--accent), #ff007f, var(--accent));
+    background-size: 400%;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotate-border 10s linear infinite; /* Animation continue */
     vertical-align: middle;
 }
 
 .profile-pic {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    border: 3px solid var(--accent);
     object-fit: cover;
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease;
+    background-color: var(--bg-color); /* Coupe la couleur du container */
+    border: 3px solid var(--bg-color); /* Créer le vide entre photo et néon */
 }
 
-/* L'effet de halo lumineux au survol */
-.profile-pic-container:hover .profile-pic {
-    transform: scale(1.05);
-}
-
-.profile-pic-container::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, var(--accent), #7ee787, var(--accent));
-    border-radius: 50%;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    filter: blur(8px);
-}
-
-.profile-pic-container:hover::after {
-    opacity: 0.6;
+@keyframes rotate-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .subtitle {
