@@ -40,12 +40,46 @@ h1 {
     flex-wrap: wrap;
 }
 
+/* Remplace ton ancien .profile-pic par ceci */
+.profile-pic-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
 .profile-pic {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     border: 3px solid var(--accent);
     object-fit: cover;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+/* L'effet de halo lumineux au survol */
+.profile-pic-container:hover .profile-pic {
+    transform: scale(1.05);
+}
+
+.profile-pic-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, var(--accent), #7ee787, var(--accent));
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(8px);
+}
+
+.profile-pic-container:hover::after {
+    opacity: 0.6;
 }
 
 .subtitle {
