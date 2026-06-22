@@ -42,15 +42,14 @@ h1 {
 
 .profile-pic-container {
     position: relative;
-    width: 90px;
-    height: 90px;
-    padding: 4px; /* Espace pour la bordure */
-    background: linear-gradient(45deg, var(--accent), #ff007f, var(--accent));
-    background-size: 400%;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
+    /* Un fond dégradé très léger, presque imperceptible, pour donner du volume */
+    background: linear-gradient(135deg, var(--accent) 0%, #1e293b 100%);
+    padding: 3px; /* Épaisseur de la bordure élégante */
     display: inline-block;
-    animation: rotate-border 10s linear infinite; /* Animation continue */
-    vertical-align: middle;
+    transition: all 0.4s ease;
 }
 
 .profile-pic {
@@ -58,14 +57,18 @@ h1 {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    background-color: var(--bg-color); /* Coupe la couleur du container */
-    border: 3px solid var(--bg-color); /* Créer le vide entre photo et néon */
+    border: 3px solid var(--bg-color); /* Crée un petit espace entre la photo et la bordure */
+    transition: transform 0.4s ease;
 }
 
-@keyframes rotate-border {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Effet au survol : la bordure devient plus claire et la photo avance */
+.profile-pic-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.3); /* Un léger halo bleu soft */
+}
+
+.profile-pic-container:hover .profile-pic {
+    transform: scale(0.98);
 }
 
 .subtitle {
