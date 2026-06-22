@@ -267,3 +267,20 @@ footer {
     border-top: 1px solid var(--border-color);
     padding-top: 20px;
 }
+/* --- ANIMATION RYANN (Ajouté en bas) --- */
+
+.anim-text {
+    background: linear-gradient(90deg, #c9d1d9, #58a6ff, #c9d1d9);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 5s linear infinite;
+    font-weight: 800;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
